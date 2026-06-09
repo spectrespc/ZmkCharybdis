@@ -4,12 +4,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/input/input.h>
-#include "macros.dtsi"
+#include <zephyr/dt-bindings/input/input.h>
 
 / {
-    /* input config for mouse move mode */
-    
 #if DT_NODE_EXISTS(DT_NODELABEL(vtrackball))
     trackball_listener {
         compatible = "zmk,input-behavior-listener";
@@ -20,10 +17,8 @@
         y-input-code = <INPUT_REL_Y>;
         scale-multiplier = <1>;
         scale-divisor = <2>;
-        // bindings = <&ib_toggle_layer 7>;
     };
 
-    /* input config for snipe mode */
     trackball_snipe_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
@@ -35,7 +30,6 @@
         scale-divisor = <4>;
     };
 
-    /* input config for mouse scroll mode */
     trackball_scroll_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
@@ -49,7 +43,6 @@
         bindings = <&ib_wheel_scaler 1 14>;
     };
 
-    /* define a resolution down scaler only for INPUT_REL_WHEEL */
     ib_wheel_scaler: ib_wheel_scaler {
         compatible = "zmk,input-behavior-scaler";
         #binding-cells = <2>;
@@ -57,7 +50,6 @@
         input-code = <INPUT_REL_WHEEL>;
     };
 
-    /* adjust cooldown waiting period for mouse key layer after activated */
     ib_toggle_layer: ib_toggle_layer {
         compatible = "zmk,input-behavior-tog-layer";
         #binding-cells = <1>;
