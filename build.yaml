@@ -1,14 +1,14 @@
 ---
 include:
   # Left
-  - board: nice_nano_v2
+  - board: nice_nano/nrf52840/zmk
     shield: charybdis_left
     keymap: qwerty
     format: bt
     artifact-name: charybdis_qwerty_left
     snippet: studio-rpc-usb-uart
   # Right
-  - board: nice_nano_v2
+  - board: nice_nano/nrf52840/zmk
     shield: charybdis_right
     keymap: qwerty
     format: bt
