@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <zephyr/dt-bindings/input/input.h>
 
 / {
 #if DT_NODE_EXISTS(DT_NODELABEL(vtrackball))
@@ -12,9 +11,9 @@
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
         layers = <0 2>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
+        evt-type = <2>;       /* INPUT_EV_REL */
+        x-input-code = <0>;   /* INPUT_REL_X */
+        y-input-code = <1>;   /* INPUT_REL_Y */
         scale-multiplier = <1>;
         scale-divisor = <2>;
     };
@@ -23,9 +22,9 @@
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
         layers = <3>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
+        evt-type = <2>;       /* INPUT_EV_REL */
+        x-input-code = <0>;   /* INPUT_REL_X */
+        y-input-code = <1>;   /* INPUT_REL_Y */
         scale-multiplier = <1>;
         scale-divisor = <4>;
     };
@@ -34,9 +33,9 @@
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
         layers = <1>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
+        evt-type = <2>;       /* INPUT_EV_REL */
+        x-input-code = <0>;   /* INPUT_REL_X */
+        y-input-code = <1>;   /* INPUT_REL_Y */
         y-invert;
         scale-multiplier = <1>;
         scale-divisor = <4>;
@@ -46,8 +45,8 @@
     ib_wheel_scaler: ib_wheel_scaler {
         compatible = "zmk,input-behavior-scaler";
         #binding-cells = <2>;
-        evt-type = <INPUT_EV_REL>;
-        input-code = <INPUT_REL_WHEEL>;
+        evt-type = <2>;       /* INPUT_EV_REL */
+        input-code = <8>;     /* INPUT_REL_WHEEL */
     };
 
     ib_toggle_layer: ib_toggle_layer {
