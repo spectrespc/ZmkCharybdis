@@ -15,7 +15,7 @@ include:
     format: bt
     artifact-name: charybdis_qwerty_right
   # Firmware Reset
-  - board: nice_nano_v2
+  - board: nice_nano/nrf52840/zmk
     shield: settings_reset
     format: reset
     artifact-name: firmware_reset_nano_v2
