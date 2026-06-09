@@ -6,7 +6,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-#if DT_NODE_EXISTS(DT_NODELABEL(vtrackball))
+#ifdef DT_NODELABEL_vtrackball
     trackball_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
@@ -84,7 +84,7 @@
                     &trans &trans &trans
             >;
 
-#if DT_NODE_EXISTS(DT_NODELABEL(vtrackball))
+#ifdef DT_NODELABEL_vtrackball
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 #endif
         };
